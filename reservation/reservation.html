@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book a cruise</title>
+	</head>
+	<body>
+		<h1>Welcome to Best Cruises - Book A Cruise<sup>&trade;</sup>!</h1>
+		<form>
+			<p>From:</p>
+			<select id="from-selection">
+				<option value="Helsinki" id="from-helsinki">Helsinki</option>
+				<option value="Turku" id="from-turku">Turku</option>
+				<option value="Vaasa" id="from-vaasa">Vaasa</option>
+				<option value="Tallinna" id="from-tallinna">Tallinna</option>
+			</select>
+			<p>To:</p>
+			<select id="to-selection">
+				<option value="Helsinki" id="to-helsinki">Helsinki</option>
+				<option value="Turku" id="to-turku">Turku</option>
+				<option value="Vaasa" id="to-vaasa">Vaasa</option>
+				<option value="Tallinna" id="to-tallinna">Tallinna</option>
+			</select>
+			<p>Name:</p>
+			<p><input type="text" id="customer-name" required /></p>
+			<p>Email:</p>
+			<p><input type="email" id="customer-email" required /></p>
+			<p>Number of adults:</p>
+			<p>
+				<input
+					type="number"
+					id="number-of-adults"
+					required
+					min="1"
+					max="99"
+				/>
+			</p>
+			<p>Number of children:</p>
+			<p>
+				<input
+					type="number"
+					id="number-of-children"
+					required
+					min="0"
+					max="99"
+				/>
+			</p>
+			<p>Departure date:</p>
+			<p><input type="date" id="departure-date" required /></p>
+			<p>Travelling with a vehicle:</p>
+			<p>
+				<input type="checkbox" id="vehicle" />
+				<button type="submit" id="submit">Submit</button>
+			</p>
+		</form>
+	</body>
+</html>
