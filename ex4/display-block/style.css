@@ -1,0 +1,24 @@
+*{
+	box-sizing: border-box;
+}
+.swot {
+	
+  display: block;
+  width: 50%;
+  height: 200px;
+  border-color: blue;
+  border-style: groove;
+}
+
+.container {
+  min-width: 600px;
+  min-height: 600px;
+}
+
+#B,#C{
+	float: left;
+	width: calc(50% - 2px);
+}
+#D{
+	clear: both;
+}
