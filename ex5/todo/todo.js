@@ -1,9 +1,27 @@
-function addListItem(text) {
+const list = document.getElementById("todo")
+
+function addListItem(index) {
 	// TODO: implement this function
+	let li = document.createElement("li")
+	li.addEventListener("click", listClickHandler)
+	li.appendChild(document.createTextNode(data[index].name))
+	if (data[index].done) {
+		li.classList.add("done")
+	}
+	list.appendChild(li)
 }
 
 function submitHandler(e) {
 	// TODO: implement this function
+	e.preventDefault()
+	const input = document.getElementById("type-input")
+	let text = input.value
+	text = text.replace(/ +(?= )/g, "")
+	if (text !== "" && text !== " ") {
+		data.push({ name: text, done: false })
+		addListItem(data.length - 1)
+	}
+	input.value = ""
 }
 
 function listClickHandler(e) {
@@ -12,23 +30,16 @@ function listClickHandler(e) {
 	if (className === "") {
 		this.className = "done"
 	} else {
-		this.className = ""
+		this.remove()
 	}
 }
 
-let data = [
-	{ name: "item 1", done: true },
-	{ name: "item 2", done: false },
-	{ name: "item 3", done: true },
-]
-
-const list = document.getElementById("todo")
-for (i = 0; i < data.length; i++) {
-	let li = document.createElement("li")
-	li.addEventListener("click", listClickHandler)
-	li.appendChild(document.createTextNode(data[i].name))
-	if (data[i].done) {
-		li.classList.add("done")
+let data = []
+if (data.length) {
+	for (i = 0; i < data.length; i++) {
+		addListItem(i)
 	}
-	list.appendChild(li)
 }
+
+const form = document.getElementById("form")
+form.addEventListener("submit", submitHandler)
